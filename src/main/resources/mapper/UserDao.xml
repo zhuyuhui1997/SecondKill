@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.UserDao">
+    <select id="getPasswordByName">
+    select user_password from user where user_name = #{userName};
+    </select>
+    <!--根据用户名获取用户基本信息-->
+    <select id="getUserByName">
+      select user_phone,user_name,address,email from user where user_name = #{userName};
+    </select>
+    <insert id="insertUser">
+        insert into user(`user_name`,`user_password`,`user_phone`)
+    </insert>
+</mapper>
